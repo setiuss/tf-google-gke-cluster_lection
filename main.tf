@@ -3,7 +3,7 @@ resource "google_container_cluster" "demo" {
   location = var.GOOGLE_REGION
 
   remove_default_node_pool = true
-  initial_node_count = 1
+  initial_node_count       = 1
 }
 
 resource "google_container_node_pool" "main" {
