@@ -17,3 +17,10 @@ resource "google_container_node_pool" "main" {
     machine_type = var.GKE_MACHINE_TYPE
   }
 }
+
+module "gke_cluster" {
+  source         = "github.com/setiuss/tf-google-gke-cluster"
+  GOOGLE_REGION  = var.GOOGLE_REGION
+  GOOGLE_PROJECT = var.GOOGLE_PROJECT
+  GKE_NUM_NODES  = 2
+}
