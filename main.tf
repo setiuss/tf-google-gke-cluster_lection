@@ -2,10 +2,11 @@ resource "google_container_cluster" "demo" {
   name     = "demo-cluster"
   location = var.GOOGLE_REGION
 
-  remove_default_node_pool = true
+  remove_default_node_pool = true # delete default pool
   initial_node_count       = 1
 }
 
+# create castom pool
 resource "google_container_node_pool" "main" {
   name       = "main"
   project    = google_container_cluster.demo.project
